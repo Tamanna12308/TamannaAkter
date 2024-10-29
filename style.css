@@ -1,10 +1,13 @@
-/* Basic styling for the portfolio */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
     color: #333;
+    background-image: url('images/background.jpg');
+    background-size: cover; /* Cover the entire screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Keeps the background fixed during scroll */
 }
 
 header {
@@ -48,3 +51,4 @@ footer {
     text-align: center;
 }
 
+/* Add any additional styling or animation as needed */
