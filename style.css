@@ -1,4 +1,9 @@
-body {
+html, body {
+    height: 100%;
+    overflow: visible;
+}
+
+body { 
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -51,17 +56,20 @@ footer {
     text-align: center;
 }
 
-/* Particle effect styling */
-.particle {
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.8); /* Adjust color and opacity */
-    pointer-events: none;
-    animation: fadeOut 0.8s forwards;
-    z-index: 1000; /* Ensures particles are on top */
+html, body {
+    height: 100%;
+    overflow: visible;
 }
 
-/* Fade out animation for particles */
+.particle {
+    position: absolute; /* Keeps particles within the viewport */
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    animation: fadeOut 0.8s forwards;
+    z-index: 1000;
+}
+
 @keyframes fadeOut {
     from {
         opacity: 1;
@@ -73,4 +81,3 @@ footer {
     }
 }
 
-/* Add any additional styling or animation as needed */
