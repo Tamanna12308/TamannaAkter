@@ -68,6 +68,7 @@ html, body {
     pointer-events: none;
     animation: fadeOut 0.8s forwards;
     z-index: 1000;
+    border: 1px solid red; /* Add border for testing */
 }
 
 @keyframes fadeOut {
