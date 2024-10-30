@@ -3,152 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio with Particle Effect</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* General styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-image: url('images/background.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+        /* Smooth scrolling for internal links */
+        html {
+            scroll-behavior: smooth;
         }
 
-        header {
+        /* Hero section styling */
+        .hero {
             background-color: #333;
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
         }
 
-        nav ul {
-            list-style-type: none;
-            padding: 0;
+        /* Center content in the hero section */
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
+        /* Profile picture styling */
+        .profile-pic {
+            width: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 20px auto;
         }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        section {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .project-card {
-            background-color: white;
-            padding: 15px;
+        /* Flip container for skills and hobbies */
+        .flip-container {
+            perspective: 1000px;
+            display: inline-block;
             margin: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 120px;
+            height: 120px;
         }
 
-        footer {
+        .flip-card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-container:hover .flip-card {
+            transform: rotateY(180deg);
+            animation: shimmer 1.5s infinite;
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .flip-card-front {
+            background-color: #f9f9f9;
+            font-size: 14px;
+        }
+
+        .flip-card-back {
             background-color: #333;
             color: white;
+            transform: rotateY(180deg);
+            font-size: 14px;
+            line-height: 1.6;
             padding: 10px;
             text-align: center;
         }
 
-        /* Particle effect styling */
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.8);
-            pointer-events: none;
-            animation: fadeOut 0.8s forwards;
-            z-index: 1000;
+        /* Glitter effect */
+        @keyframes shimmer {
+            0% {
+                box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255, 215, 0, 0.7), 0 0 30px rgba(255, 215, 0, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.4);
+            }
         }
 
-        /* Fade-out animation for particles */
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-                transform: scale(1);
-            }
-            to {
-                opacity: 0;
-                transform: scale(0.5);
-            }
+        /* Contact icons */
+        .contact-icons {
+            font-size: 24px;
+            color: black;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        /* General section styling */
+        section {
+            padding: 20px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <h2>Tamanna Akter</h2>
+        </div>
     </header>
+
+    <!-- Navigation -->
     <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <ul style="list-style-type: none; display: flex; justify-content: center; gap: 20px; padding: 10px 0;">
+            <li><a href="#about" style="text-decoration: none; color: black;">About</a></li>
+            <li><a href="#skills" style="text-decoration: none; color: black;">Skills</a></li>
+            <li><a href="#hobbies" style="text-decoration: none; color: black;">Hobbies</a></li>
+            <li><a href="#projects" style="text-decoration: none; color: black;">Projects</a></li>
+            <li><a href="#contact" style="text-decoration: none; color: black;">Contact</a></li>
         </ul>
     </nav>
 
+    <!-- About Section with Profile Picture -->
     <section id="about">
         <h2>About Me</h2>
-        <p>Welcome! I'm Tamanna Akter, a web developer specializing in creating dynamic and interactive websites.</p>
+        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+        <p>Hello! I'm creating websites that help provide necessary information to users.</p>
     </section>
 
+   <!-- Skills Section -->
+<section id="skills">
+    <h3>Skills</h3>
+    <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <div class="flip-container glitter">
+            <div class="flip-card">
+                <div class="flip-card-front">
+                    <img src="webdev-front.jpg" alt="Web Development" style="width: 120px; height: auto; margin-top: 10px;"> <!-- Add your image here -->
+                </div>
+                <div class="flip-card-back">
+                    <p>HTML, CSS, JavaScript</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container glitter">
+            <div class="flip-card">
+                <div class="flip-card-front">
+                    <img src="dbms.jpg" alt="Database Management" style="width: 116px; height: auto; margin-top: 10px;"> <!-- Add your image here -->
+                </div>
+                <div class="flip-card-back">
+                    <p>SQL</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container glitter">
+            <div class="flip-card">
+                <div class="flip-card-front">
+                    <img src="github.jpg" alt="Version Control" style="width: 120px; height: auto; margin-top: 10px;"> <!-- Add your image here -->
+                </div>
+                <div class="flip-card-back">
+                    <p>Git, GitHub</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container glitter">
+            <div class="flip-card">
+                <div class="flip-card-front" style="background-image: url('rd.jpg');">
+                    <p>Responsive Design</p>
+                </div>
+                <div class="flip-card-back">
+                    <p>Adapting to all screen sizes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Hobbies Section -->
+<section id="hobbies">
+    <h3>Hobbies</h3>
+    <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 20px;">
+        <div class="flip-container glitter">
+            <div class="flip-card">
+                <div class="flip-card-front" style="background-image: url('reading.jpg'); background-size: cover; background-position: center;">
+                    <p style="color: white; font-size: 16px; font-weight: bold;"></p>
+                </div>
+                <div class="flip-card-back">
+                    <p>Tech Blogs</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container glitter">
+            <div class="flip-card">
+                <div class="flip-card-front" style="background-image: url('photography.jpg'); background-size: cover; background-position: center;">
+                    <p style="color: white; font-size: 16px; font-weight: bold;"></p>
+                </div>
+                <div class="flip-card-back">
+                    <p>Capturing Moments</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container glitter">
+            <div class="flip-card">
+                <div class="flip-card-front" style="background-image: url('traveling.jpg'); background-size: cover; background-position: center;">
+                    <p style="color: white; font-size: 16px; font-weight: bold;"></p>
+                </div>
+                <div class="flip-card-back">
+                    <p>Exploring New Places</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container glitter">
+            <div class="flip-card">
+                <div class="flip-card-front" style="background-image: url('gardening.jpg'); background-size: cover; background-position: center;">
+                    <p style="color: white; font-size: 16px; font-weight: bold;"></p>
+                </div>
+                <div class="flip-card-back">
+                    <p>Growing Plants</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+    <!-- Projects Section -->
     <section id="projects">
         <h2>Projects</h2>
-        <div class="project-card">
+        <div class="project-card glitter">
             <h3>Project 1</h3>
-            <p>Project description goes here.</p>
+            <p>A description of the project goes here.</p>
         </div>
-        <div class="project-card">
+        <div class="project-card glitter">
             <h3>Project 2</h3>
-            <p>Project description goes here.</p>
+            <p>A description of the project goes here.</p>
         </div>
     </section>
 
-    <footer>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-icons">
+            <a href="mailto:tams240330@example.com" target="_blank">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://github.com/Tamanna12308/TamannaAkter.git" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://instagram.com/__tamanna_akter__" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/+8801766576004" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="text-align: center;">
         <p>&copy; 2024 Tamanna Akter. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for particle effect -->
-    <script>
-        console.log("Welcome to my portfolio site!");
-
-        // Particle effect on mouse movement with trail
-        document.addEventListener('mousemove', (e) => {
-            createParticle(e.pageX, e.pageY);
-        });
-
-        // Handles scrolling as well as mouse movement
-        document.addEventListener('scroll', () => {
-            createParticle(window.innerWidth / 2, window.innerHeight / 2);
-        });
-
-        function createParticle(x, y) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-
-            const size = Math.random() * 10 + 5; // Random size between 5 and 15
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-
-            // Set particle position
-            particle.style.left = `${x}px`;
-            particle.style.top = `${y}px`;
-
-            document.body.appendChild(particle);
-
-            // Fade out and remove particle after animation ends
-            particle.addEventListener('animationend', () => {
-                particle.remove();
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
