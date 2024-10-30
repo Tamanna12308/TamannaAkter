@@ -277,5 +277,35 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+// Function to create a particle at specified coordinates
+function createParticle(x, y) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+
+    // Random size for each particle
+    const size = Math.random() * 10 + 5;
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+
+    // Set particle position
+    particle.style.left = `${x}px`;
+    particle.style.top = `${y}px`;
+
+    // Append particle to body
+    document.body.appendChild(particle);
+
+    // Remove the particle after the animation ends
+    particle.addEventListener('animationend', () => {
+        particle.remove();
+    });
+}
+
+// Event listener for mouse movement
+document.addEventListener('mousemove', (e) => {
+    createParticle(e.clientX, e.clientY);
+});
+</script>
+
 </body>
 </html>
