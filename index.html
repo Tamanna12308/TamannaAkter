@@ -11,7 +11,27 @@
         html {
             scroll-behavior: smooth;
         }
+/* Particle effect styling */
+    .particle {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.8); /* Adjust color and opacity */
+        pointer-events: none;
+        animation: fadeOut 0.8s forwards;
+        z-index: 1000; /* Ensures particles are on top */
+    }
 
+    /* Fade out animation for particles */
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+            transform: scale(1);
+        }
+        to {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+    }
         /* Hero section styling */
         .hero {
             background-color: #333;
