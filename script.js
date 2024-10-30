@@ -6,7 +6,7 @@ document.addEventListener('mousemove', (e) => {
 });
 
 // Handles scrolling as well as mouse movement
-document.addEventListener('scroll', (e) => {
+document.addEventListener('scroll', () => {
     createParticle(event.clientX, event.clientY);
 });
 
@@ -28,4 +28,5 @@ function createParticle(x, y) {
         particle.remove();
     });
 }
+
 
