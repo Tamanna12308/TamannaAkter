@@ -64,7 +64,7 @@ html, body {
 .particle {
     position: absolute; /* Keeps particles within the viewport */
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     pointer-events: none;
     animation: fadeOut 0.8s forwards;
     z-index: 1000;
