@@ -1,32 +1,26 @@
 // A basic script to log a message in the console
 console.log("Welcome to my portfolio site!");
-// Particle effect on mouse movement with trail
-document.addEventListener('mousemove', (e) => {
-    createParticle(e.pageX, e.pageY);
-});
-
-// Handles scrolling as well as mouse movement
-document.addEventListener('scroll', () => {
-    createParticle(event.clientX, event.clientY);
-});
-
 function createParticle(x, y) {
     const particle = document.createElement('div');
     particle.classList.add('particle');
 
-    const size = Math.random() * 10 + 5; // Random size between 5 and 15
+    // Random size for each particle
+    const size = Math.random() * 10 + 5;
     particle.style.width = `${size}px`;
     particle.style.height = `${size}px`;
 
-    particle.style.left = `${x}px`; // Corrected particle positioning
+    // Adjust particle to position relative to scrolling offset
+    particle.style.left = `${x}px`;
     particle.style.top = `${y}px`;
 
+    // Append particle to body and set auto-removal
     document.body.appendChild(particle);
-
-    // Fade out and remove particle after animation
     particle.addEventListener('animationend', () => {
         particle.remove();
     });
 }
 
-
+// Event listener to create particle based on mouse position and scroll offset
+document.addEventListener('mousemove', (e) => {
+    createParticle(e.clientX, e.clientY); // Use clientX/clientY for viewport positioning
+});
