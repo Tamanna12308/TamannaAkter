@@ -3,53 +3,51 @@ html, body {
     margin: 0;
     overflow: auto;
     position: relative;
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
 }
 
-body { 
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-image: url('images/background.jpg');
-    background-size: cover; /* Cover the entire screen */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-attachment: fixed; /* Keeps the background fixed during scroll */
+/* Set the entire body background to white */
+body {
+    background-color: white;
+    color: black; /* Ensure text remains visible */
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
+header, .header, .navbar {
+    background-color: white !important;
+    color: black !important;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
+
+/* Make the footer background white with black text */
+footer, .footer {
+    background-color: white !important;
+    color: black;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+/* Ensure any text inside the header and footer is black */
+header h1, header h2, footer h1, footer h2, footer p {
+    color: black !important;
 }
+
 
 nav ul li a {
-    color: white;
+    color: #000; /* Black links in the navigation */
     text-decoration: none;
 }
 
-section {
-    padding: 20px;
-    text-align: center;
+section, footer {
+    color: #000; /* Black text for sections and footer */
 }
 
 .project-card {
-    background-color: white;
+    background-color: #f9f9f9; /* Light background for cards */
+    color: #000; /* Black text */
     padding: 15px;
     margin: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 
 footer {
     background-color: #333;
@@ -83,3 +81,30 @@ html, body {
     }
 }
 
+/* Container for About Me section */
+.about-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    text-align: left;
+}
+
+/* Profile picture */
+.profile-pic {
+    width: 250px !important; /* Larger width */
+    height: 300px !important; /* Set height for a rectangular shape */
+    object-fit: cover !important; ; /* Ensures the image fills the box without distortion */
+    border-radius: 8px !important; ; /* Optional: Set to 0 for sharp corners */
+    margin-right: 20px !important; ;
+}
+
+/* Text styling */
+.about-text {
+    max-width: 500px; /* Optional: Controls text width */
+}
+
+#about {
+    text-align: right; /* Ensures everything in #about is aligned right */
+}
