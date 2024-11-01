@@ -110,11 +110,12 @@ footer {
 
 /* Profile picture styling */
 .profile-pic {
-    width: 250px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 20px;
+    width: 150px;  /* Set width */
+    height: 150px; /* Set height to make it square */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 0; /* Remove rounding to make it square */
+    display: block;
+    margin: 20px auto;
 }
 
 /* About text styling */
