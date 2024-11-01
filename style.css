@@ -1,28 +1,28 @@
+/* Base styling */
 html, body {
     height: 100%;
     margin: 0;
-    overflow: auto;
-    position: relative;
+    overflow: visible;
     background-color: #fff; /* White background */
     color: #000; /* Black text */
 }
 
-/* Set the entire body background to white */
-body {
-    background-color: white;
-    color: black; /* Ensure text remains visible */
-}
-
+/* Header styling */
 header, .header, .navbar {
+    height: 80px;
     background-color: white !important;
     color: black !important;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
 }
 
-
-/* Make the footer background white with black text */
+/* Footer styling */
 footer, .footer {
     background-color: white !important;
     color: black;
+    padding: 20px;
+    text-align: center;
 }
 
 /* Ensure any text inside the header and footer is black */
@@ -30,41 +30,58 @@ header h1, header h2, footer h1, footer h2, footer p {
     color: black !important;
 }
 
+/* Navigation bar styles */
+.navbar ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
 
-nav ul li a {
-    color: #000; /* Black links in the navigation */
+/* Adjust font size and spacing for navigation links */
+.navbar ul li {
+    margin-right: 20px; /* Space between navigation links */
+}
+
+.navbar ul li a {
+    font-size: 20px !important; /* Set font size for nav links */
+    color: black !important; /* Ensure text color is black */
     text-decoration: none;
 }
 
+/* Section styling */
 section, footer {
-    color: #000; /* Black text for sections and footer */
+    color: #000; /* Black text */
+    padding: 20px;
 }
 
+/* Project card styling */
 .project-card {
     background-color: #f9f9f9; /* Light background for cards */
-    color: #000; /* Black text */
+    color: #000;
     padding: 15px;
     margin: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
-
+/* Footer dark theme */
 footer {
     background-color: #333;
     color: white;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
 }
 
-html, body {
-    height: 100%;
-    overflow: visible;
-}
-
+/* Particle effect styling with black color */
 .particle {
-    position: fixed; /* Fix to viewport and handle offset in JS */
+    position: fixed;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Black color for particle */
     pointer-events: none;
     animation: fadeOut 0.8s forwards;
     z-index: 1000;
@@ -81,7 +98,7 @@ html, body {
     }
 }
 
-/* Container for About Me section */
+/* About section container */
 .about-container {
     display: flex;
     justify-content: flex-end;
@@ -91,20 +108,20 @@ html, body {
     text-align: left;
 }
 
-/* Profile picture */
+/* Profile picture styling */
 .profile-pic {
-    width: 250px !important; /* Larger width */
-    height: 300px !important; /* Set height for a rectangular shape */
-    object-fit: cover !important; ; /* Ensures the image fills the box without distortion */
-    border-radius: 8px !important; ; /* Optional: Set to 0 for sharp corners */
-    margin-right: 20px !important; ;
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
 }
 
-/* Text styling */
+/* About text styling */
 .about-text {
-    max-width: 500px; /* Optional: Controls text width */
+    max-width: 500px;
 }
 
 #about {
-    text-align: right; /* Ensures everything in #about is aligned right */
+    text-align: right;
 }
