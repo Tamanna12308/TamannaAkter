@@ -24,4 +24,3 @@ function createParticle(x, y) {
 document.addEventListener('mousemove', (e) => {
     createParticle(e.clientX, e.clientY); // Use clientX/clientY for viewport positioning
 });
-
