@@ -131,6 +131,7 @@
             <li><a href="#skills" style="text-decoration: none; color: black;">Skills</a></li>
             <li><a href="#hobbies" style="text-decoration: none; color: black;">Hobbies</a></li>
             <li><a href="#projects" style="text-decoration: none; color: black;">Projects</a></li>
+            <li><a href="#resume" style="text-decoration: none; color: black;">Resume</a></li>
             <li><a href="#contact" style="text-decoration: none; color: black;">Contact</a></li>
         </ul>
     </nav>
@@ -256,25 +257,56 @@
             <p>A description of the project goes here.</p>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact-icons">
-            <a href="mailto:tams240330@example.com" target="_blank">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <a href="https://github.com/Tamanna12308/TamannaAkter.git" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://instagram.com/__tamanna_akter__" target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://wa.me/+8801766576004" target="_blank">
-                <i class="fab fa-whatsapp"></i>
-            </a>
+ <!-- Resume Section -->
+ <section id="resume" style="text-align: center; padding: 20px;">
+    <h2>Resume</h2>
+    <p>Click the button below to view or download my resume:</p>
+    <a href="Tamanna_Akter.pdf" download="Tamanna_Akter.pdf" 
+       style="padding: 10px 20px; background-color: #333; color: white; text-decoration: none; border-radius: 5px;">
+       Download Resume
+    </a>
+</section>
+   
+   <!-- Comments Section -->
+<section id="comments">
+    <h2>Comments and Feedback</h2>
+    <form id="comment-form">
+        <div style="margin-bottom: 10px;">
+            <label for="name" style="display: block;">Name:</label>
+            <input type="text" id="name" required style="padding: 8px; width: 100%; max-width: 400px;">
         </div>
-    </section>
+        <div style="margin-bottom: 10px;">
+            <label for="email" style="display: block;">Email:</label>
+            <input type="email" id="email" required style="padding: 8px; width: 100%; max-width: 400px;">
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label for="comment" style="display: block;">Comment:</label>
+            <textarea id="comment" required style="padding: 8px; width: 100%; max-width: 400px; height: 100px;"></textarea>
+        </div>
+        <button type="submit" style="padding: 10px 15px; background-color: #333; color: white; border: none; cursor: pointer;">Submit</button>
+        <button type="button" id="clear-comments" style="padding: 10px 15px; background-color: #ff4d4d; color: white; border: none; cursor: pointer; margin-left: 10px;">Clear All Comments</button>
+    </form>
+    <div id="comments-list" style="margin-top: 20px;"></div>
+</section>
+
+ <!-- Contact Section -->
+ <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-icons">
+        <a href="mailto:tams240330@example.com" target="_blank">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://github.com/Tamanna12308/TamannaAkter.git" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://instagram.com/__tamanna_akter__" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/+8801766576004" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer style="text-align: center;">
@@ -311,6 +343,31 @@ document.addEventListener('mousemove', (e) => {
     createParticle(e.clientX, e.clientY);
 });
 </script>
-
+<script>
+    document.getElementById('comment-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+    
+        const name = document.getElementById('name').value;
+        const comment = document.getElementById('comment').value;
+    
+        // Create a new comment element
+        const commentElement = document.createElement('div');
+        commentElement.style.border = '1px solid #ddd';
+        commentElement.style.padding = '10px';
+        commentElement.style.marginTop = '10px';
+        commentElement.style.borderRadius = '5px';
+    
+        // Add the name and comment to the comment element
+        commentElement.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+        
+        // Append the comment to the comments list
+        document.getElementById('comments-list').appendChild(commentElement);
+    
+        // Clear the form
+        document.getElementById('name').value = '';
+        document.getElementById('comment').value = '';
+    });
+    </script>
+    
 </body>
 </html>
