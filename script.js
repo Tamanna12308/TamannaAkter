@@ -1,26 +1,49 @@
-// A basic script to log a message in the console
-console.log("Welcome to my portfolio site!");
-function createParticle(x, y) {
-    const particle = document.createElement('div');
-    particle.classList.add('particle');
+// Function to load comments from localStorage
+function loadComments() {
+    const commentsList = document.getElementById('comments-list');
+    commentsList.innerHTML = ''; // Clear existing comments
 
-    // Random size for each particle
-    const size = Math.random() * 10 + 5;
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
+    // Retrieve the comments array from localStorage
+    const comments = JSON.parse(localStorage.getItem('comments')) || [];
 
-    // Adjust particle to position relative to scrolling offset
-    particle.style.left = `${x}px`;
-    particle.style.top = `${y}px`;
-
-    // Append particle to body and set auto-removal
-    document.body.appendChild(particle);
-    particle.addEventListener('animationend', () => {
-        particle.remove();
+    comments.forEach(({ name, comment }) => {
+        const commentElement = document.createElement('div');
+        commentElement.style.border = '1px solid #ddd';
+        commentElement.style.padding = '10px';
+        commentElement.style.marginTop = '10px';
+        commentElement.style.borderRadius = '5px';
+        commentElement.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+        commentsList.appendChild(commentElement);
     });
 }
 
-// Event listener to create particle based on mouse position and scroll offset
-document.addEventListener('mousemove', (e) => {
-    createParticle(e.clientX, e.clientY); // Use clientX/clientY for viewport positioning
+// Function to save a new comment to localStorage
+function saveComment(name, comment) {
+    const comments = JSON.parse(localStorage.getItem('comments')) || [];
+    comments.push({ name, comment });
+    localStorage.setItem('comments', JSON.stringify(comments));
+    loadComments();
+}
+
+// Handle form submission
+document.getElementById('comment-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const comment = document.getElementById('comment').value;
+
+    saveComment(name, comment);
+
+    // Clear the form
+    document.getElementById('name').value = '';
+    document.getElementById('comment').value = '';
 });
+
+// Clear all comments
+document.getElementById('clear-comments').addEventListener('click', function() {
+    localStorage.removeItem('comments');
+    loadComments();
+});
+
+// Load comments on page load
+window.onload = loadComments;
