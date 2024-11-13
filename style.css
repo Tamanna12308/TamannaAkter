@@ -108,15 +108,27 @@ footer {
     text-align: left;
 }
 
+/* Profile picture container styling */
+.profile-pic-container {
+    width: 150px;      /* Set the width of the square container */
+    height: 150px;     /* Set the height of the square container */
+    overflow: hidden;  /* Hide any part of the image that overflows */
+    display: flex;
+    justify-content: center; /* Center image horizontally */
+    align-items: center;     /* Center image vertically */
+    border-radius: 0%;  /* No rounded corners, for a square shape */
+    background-color: #f0f0f0; /* Optional: background for visibility */
+}
+
 /* Profile picture styling */
 .profile-pic {
-    width: 150px;  /* Set width */
-    height: 150px; /* Set height to make it square */
-    object-fit: cover; /* Maintain aspect ratio */
-    border-radius: 0; /* Remove rounding to make it square */
-    display: block;
-    margin: 20px auto;
+    width: 100%;      /* Make image width 100% of the container */
+    height: 100%;     /* Make image height 100% of the container */
+    object-fit: cover; /* Ensure the image fills the square container without distortion */
 }
+
+
+
 
 /* About text styling */
 .about-text {
@@ -125,4 +137,9 @@ footer {
 
 #about {
     text-align: right;
+}
+#comments {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for comments section */
+    border-radius: 8px;
 }
