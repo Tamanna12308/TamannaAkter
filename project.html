@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            background-color: #000; /* Black background */
+            color: #2ecc71; /* Green font color */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            background-color: #1c1f24;
+            overflow-y: auto; /* Enable vertical scrolling */
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+        }
+        .sidebar h3 {
+            color: #2ecc71;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .nav-link {
+            color: #b0b0b0;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        /* Content Styles */
+        .content {
+            margin-left: 200px; /* Add margin equal to sidebar width */
+            padding: 20px;
+        }
+
+        .project-card {
+            margin-bottom: 20px;
+            border: 1px solid #2ecc71;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #111;
+        }
+
+        .project-card h4 {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            margin-top: 10px;
+        }
+
+        .btn-primary {
+            background-color: #2ecc71;
+            border-color: #2ecc71;
+        }
+
+        .btn-primary:hover {
+            background-color: #27ae60;
+            border-color: #27ae60;
+        }
+
+        /* Modal Styles */
+        .modal-content {
+            background-color: #111;
+            color: #2ecc71;
+        }
+        .light-green {
+        color: #2ecc71 !important; /* Light green with higher specificity */
+    }
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <nav class="sidebar p-3">
+            <h3>My Portfolio</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="project.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="skill.html" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="hobbies.html" class="nav-link">Hobbies</a></li>
+                <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="content flex-grow-1 p-4">
+            <h1 class="light-green">My Projects</h1>
+            <div class="row">
+                <!-- Project 1 -->
+                <div class="col-md-6">
+                    <div class="project-card">
+                        <h4>Project 1</h4>
+                        <p>A brief description of Project 1.</p>
+                        <button class="btn btn-primary" onclick="showDetails('Project 1', 'This is the detailed description of Project 1. Working on a web programming project called Event Management System to create a new website')">View More</button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-md-6">
+                    <div class="project-card">
+                        <h4>Project 2</h4>
+                        <p>A brief description of Project 2.</p>
+                        <button class="btn btn-primary" onclick="showDetails('Project 2', 'This is the detailed description of Project 2.')">View More</button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-md-6">
+                    <div class="project-card">
+                        <h4>Project 3</h4>
+                        <p>A brief description of Project 3.</p>
+                        <button class="btn btn-primary" onclick="showDetails('Project 3', 'This is the detailed description of Project 3.')">View More</button>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="col-md-6">
+                    <div class="project-card">
+                        <h4>Project 4</h4>
+                        <p>A brief description of Project 4.</p>
+                        <button class="btn btn-primary" onclick="showDetails('Project 4', 'This is the detailed description of Project 4.')">View More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel">Project Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="projectDescription">Project description goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Function to show project details dynamically in the modal
+        function showDetails(title, description) {
+            document.getElementById('projectModalLabel').textContent = title;
+            document.getElementById('projectDescription').textContent = description;
+            const modal = new bootstrap.Modal(document.getElementById('projectModal'));
+            modal.show();
+        }
+    </script>
+</body>
+</html>
