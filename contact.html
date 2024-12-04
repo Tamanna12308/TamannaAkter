@@ -1,0 +1,191 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #2b2d3b;
+            color: #fff;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            background-color: #1c1f24;
+            overflow-y: auto; /* Enable vertical scrolling */
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+        }
+
+        .sidebar h3 {
+            color: #2ecc71;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .nav-link {
+            color: #b0b0b0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #2ecc71; /* Green highlight */
+            font-weight: bold;
+        }
+
+        /* Main Content Styles */
+        .content {
+            margin-left: 200px; /* Add margin to account for sidebar width */
+            padding: 20px;
+        }
+
+        .contact-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .contact-info {
+            background-color: #1f2029;
+            padding: 20px;
+            border-radius: 8px;
+            width: 35%;
+        }
+
+        .contact-info h3 {
+            color: #2ecc71;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: #2ecc71;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background-color: #1f2029;
+            padding: 20px;
+            border-radius: 8px;
+            width: 60%;
+        }
+
+        .contact-form h3 {
+            color: #2ecc71;
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background-color: #333644;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border: 1px solid #2ecc71;
+        }
+
+        .contact-form button {
+            background-color: #2ecc71;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #27ae60;
+        }
+
+        footer {
+            text-align: center;
+            color: #b0b0b0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <nav class="sidebar p-3">
+            <h3>My Portfolio</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="project.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="skill.html" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="hobbies.html" class="nav-link">Hobbies</a></li>
+                <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="content">
+            <main class="container">
+                <h1>Contact Me</h1>
+                <div class="contact-section">
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <h3>Contact Details</h3>
+                        <p><i class="fas fa-phone-alt"></i> Mobile: +017-6657-6004</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Location: Mohammadpur , Dhaka</p>
+                        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:tams240330@example.com">tams240330@example.com</a></p>
+                        <p><i class="fas fa-globe"></i> Website: <a href="https://tamanna12308.github.io/Tamanna12308/" target="_blank">www.tamanna12308.com</a></p>
+                        <div class="social-icons mt-4">
+                            <a href="https://facebook.com/Tamanna Akter" target="_blank" title="Facebook: Tamanna Akter">
+                                <i class="fab fa-facebook fa-lg me-3"></i>
+                            </a>
+                            <a href="https://twitter.com/Tamanna Akter" target="_blank" title="Twitter">
+                                <i class="fab fa-twitter fa-lg me-3"></i>
+                            </a>
+                            <a href="https://instagram.com/__tamanna_akter_" target="_blank" title="Instagram: __tamanna_akter_">
+                                <i class="fab fa-instagram fa-lg me-3"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/Tamanna Akter" target="_blank" title="LinkedIn">
+                                <i class="fab fa-linkedin fa-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form">
+                        <h3>Send Me a Message</h3>
+                        <form action="https://formspree.io/f/xanyvdkw" method="POST">
+                            <input type="text" name="name" placeholder="Name" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                            <textarea name="message" rows="5" placeholder="Your Message Here..." required></textarea>
+                            <button type="submit">Send</button>
+                        </form>
+                    </div>
+                </div>
+                <footer>&copy; 2024 Tamanna Akter. All rights reserved.</footer>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
