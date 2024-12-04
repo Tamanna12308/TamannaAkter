@@ -1,49 +1,28 @@
-// Function to load comments from localStorage
-function loadComments() {
-    const commentsList = document.getElementById('comments-list');
-    commentsList.innerHTML = ''; // Clear existing comments
-
-    // Retrieve the comments array from localStorage
-    const comments = JSON.parse(localStorage.getItem('comments')) || [];
-
-    comments.forEach(({ name, comment }) => {
-        const commentElement = document.createElement('div');
-        commentElement.style.border = '1px solid #ddd';
-        commentElement.style.padding = '10px';
-        commentElement.style.marginTop = '10px';
-        commentElement.style.borderRadius = '5px';
-        commentElement.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
-        commentsList.appendChild(commentElement);
-    });
-}
-
-// Function to save a new comment to localStorage
-function saveComment(name, comment) {
-    const comments = JSON.parse(localStorage.getItem('comments')) || [];
-    comments.push({ name, comment });
-    localStorage.setItem('comments', JSON.stringify(comments));
-    loadComments();
-}
-
-// Handle form submission
-document.getElementById('comment-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const comment = document.getElementById('comment').value;
-
-    saveComment(name, comment);
-
-    // Clear the form
-    document.getElementById('name').value = '';
-    document.getElementById('comment').value = '';
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("Portfolio loaded!");
 });
+<script>
+    // Add event listeners to all "View More" buttons
+    document.querySelectorAll('.btn-primary').forEach((button) =
+    {
+        button.addEventListener('click', (e) => {
+            // Find the parent card and toggle the 'flip' class
+            const card = e.target.closest('.card');
+            card.classList.toggle('flipped');
+        })
+    })
+    document.querySelectorAll('.nav-link').forEach(link = {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent immediate navigation
+            const content = document.querySelector('.content');
+            content.classList.add('rotate'); // Add the rotation class
 
-// Clear all comments
-document.getElementById('clear-comments').addEventListener('click', function() {
-    localStorage.removeItem('comments');
-    loadComments();
-});
+            // Wait for the animation to finish before navigating
+            setTimeout(() => {
+                window.location.href = link.href;
+            }, 800); // Match the transition duration in CSS
+        })
+    })
 
-// Load comments on page load
-window.onload = loadComments;
+
+</script>
